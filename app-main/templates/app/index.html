@@ -1,0 +1,19 @@
+{% extends "app/base.html" %}
+
+{% block title %}
+    Запросы
+{% endblock %}
+
+{% block body %}
+<form action="{% url 'add' %}" method="GET">
+    {% csrf_token %}
+    <label for="user_name">Имя:    </label>
+    <input type="text" name="user_name" id="user_name">
+    <input type="submit">
+
+    <label for="user_name">Фамилия:</label>
+    <p><input type="text" name="user_surname" id="user_surname">
+    <input type="submit"></p>
+</form>
+<a href="{% url 'app.index' %}">На главную страницу</a>
+{% endblock %}
